@@ -26,6 +26,6 @@ public class TestTV {
 	    System.out.println(tv2.getCanal());
 	    System.out.println(tv1.getPrecio());
 	    System.out.println(tv1.getMarca().getNombre());
-	    System.out.println(tv1.getCanal());
+	    System.out.println(tv1.getCanal());		
 	}
 }
