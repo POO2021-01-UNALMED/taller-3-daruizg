@@ -15,15 +15,16 @@ public class TV {
 	// De clase
 	private static int numTV = 0;
 	
-	// MÉTODOS
-	// Constructor
+	// .:MÉTODOS:.
+	// CONSTRUCTOR
 	public TV(Marca marca, boolean estado) {
 		this.marca = marca;
 		this.estado = estado;
 		numTV ++;
 	}
 	
-	// Getters y Setters
+	// GETTERS Y SETTERS
+	// control
 	public Control getControl() {
 		return control;
 	}
@@ -32,6 +33,7 @@ public class TV {
 		this.control = control;
 	}
 	
+	// numTV
 	public static int getNumTV() {
 		return numTV;
 	}
@@ -40,6 +42,7 @@ public class TV {
 		TV.numTV = numTV;
 	}
 	
+	// marca
 	public Marca getMarca() {
 		return marca;
 	}
@@ -47,15 +50,19 @@ public class TV {
 	public void setMarca(Marca marca) {
 		this.marca = marca;
 	}
-
+	
+	// canal
 	public int getCanal() {
 		return canal;
 	}
 
 	public void setCanal(int canal) {
-		this.canal = canal;
+		if (1 <= canal && canal <= 120) {
+			this.canal = canal;
+		}
 	}
-
+	
+	// precio
 	public int getPrecio() {
 		return precio;
 	}
@@ -63,19 +70,24 @@ public class TV {
 	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
-
+	
+	// volumen
 	public int getVolumen() {
 		return volumen;
 	}
 
 	public void setVolumen(int volumen) {
-		this.volumen = volumen;
+		if (0 <= volumen && volumen <= 7) {
+			this.volumen = volumen;
+		}
 	}
 	
+	// estado
 	public boolean getEstado() {
 		return estado;
 	}
 	
+	// OTROS MÉTODOS
 	// turnOn: "Encender TV"
 	public void turnON() {
 		estado = true;
@@ -109,7 +121,7 @@ public class TV {
 	
 	// volumenDown
 	public void volumenDown() {
-		if (estado && volumen >= 1) {
+		if (estado && volumen >= 0) {
 			volumen --;
 		}
 	}
